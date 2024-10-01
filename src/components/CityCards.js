@@ -18,7 +18,7 @@ const cities = [
     temp: "22",
   },
 ];
-function CityCards() {
+function CityCards(cityName) {
   return (
     <div style={{ display: "flex" }}>
       {cities.map((city) => (
