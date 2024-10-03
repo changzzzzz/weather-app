@@ -1,35 +1,17 @@
 import React from "react";
-const futureWeather = [
-  {
-    week: "Monday",
-    date: "22 September",
-    temp: "22",
-  },
-  {
-    week: "Tuesday",
-    date: "23 September",
-    temp: "25",
-  },
-  {
-    week: "Wednesday",
-    date: "24 September",
-    temp: "21",
-  },
-  {
-    week: "Thursday",
-    date: "25 September",
-    temp: "22",
-  },
-];
 
-function WeatherForecast() {
+function WeatherForecast({ value }) {
+  console.log("WeatherForecast", value);
+  if (!Array.isArray(value)) {
+    return <div>No data available</div>;
+  }
   return (
     <div style={{ display: "flex" }}>
-      {futureWeather.map((weather) => (
-        <div style={{ margin: "10px" }}>
-          <h3>{weather.week}</h3>
-          <p>{weather.date}</p>
-          <p>{weather.temp}</p>
+      {value.map((weather) => (
+        <div key={weather.date}>
+          <div>{weather.date}</div>
+          <div>{weather.week}</div>
+          <div>{weather.temperature}</div>
         </div>
       ))}
     </div>

@@ -1,16 +1,20 @@
 import React from "react";
 
-const weather = {
-  city: "Sydney",
-  temp: "22",
-  tempRange: "15~",
-};
-function WeatherDetails() {
+function WeatherDetails(weatherValue) {
   return (
-    <div>
-      <div>{weather.city}</div>
-      <div>{weather.temp}</div>
-      <div>{weather.tempRange}</div>
+    <div
+      style={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "space-between",
+        borderRadius: "1rem",
+        background: "white",
+        padding: "1.5rem",
+      }}
+    >
+      <div>Humidity: {weatherValue.weather.avgHumidity}</div>
+      <div>Temperature: {weatherValue.weather.avgTemperature}</div>
+      <div>pm2.5: {weatherValue.weather.pm2_5}</div>
     </div>
   );
 }
