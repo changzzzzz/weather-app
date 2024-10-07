@@ -21,25 +21,10 @@ function CityCards({ setSearchValue }) {
     fetchCitiesWeather();
   }, []);
 
-  useEffect(() => {
-    if (cityWeatherData) {
-      console.log("cityWeatherData", cityWeatherData);
-      cityWeatherData.map((city) =>
-        console.log("CityCards map", city.currentWeather)
-      );
-    }
-  }, [cityWeatherData]);
-
+  if (!cityWeatherData) {
+    return <div>No data available</div>;
+  }
   return (
-    // <div style={{ display: "flex" }}>
-    //   {cities.map((city) => (
-    //     <div style={{ margin: "10px" }}>
-    //       <h3>{city.name}</h3>
-    //       <p>{city.temp}</p>
-    //     </div>
-    //   ))}
-    // </div>
-
     <div
       style={{
         marginTop: "1.5rem",
@@ -62,9 +47,54 @@ function CityCards({ setSearchValue }) {
             setSearchValue(currentWeather.city);
           }}
         >
-          <div>
-            <div>{currentWeather.city}</div>
-            <div>{currentWeather.temperature}</div>
+          <img
+            src={currentWeather.city + ".png"}
+            alt={currentWeather.city}
+            style={{
+              width: "100%",
+              objectFit: "contain",
+              opacity: 0.2,
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              right: 0,
+              bottom: 0,
+              left: 0,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              rowGap: "0.25rem",
+            }}
+          >
+            <img
+              src={currentWeather.png}
+              alt={`${currentWeather.city} weather`}
+              style={{
+                width: "4rem",
+              }}
+            />
+
+            <div
+              style={{
+                fontSize: "1.25rem",
+                fontWeight: 700,
+                color: "white",
+              }}
+            >
+              {currentWeather.city}
+            </div>
+            <div
+              style={{
+                fontSize: "0.75rem",
+                color: "white",
+              }}
+            >
+              {currentWeather.temperature}
+            </div>
           </div>
         </div>
       ))}

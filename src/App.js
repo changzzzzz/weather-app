@@ -28,31 +28,75 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log("input from search bar:", searchValue);
+    // console.log("input from search bar:", searchValue);
     handleSearch(searchValue);
+    // console.log("input from search bar:", searchValue);
   }, [searchValue]);
 
   return (
-    <div className="App">
-      <div style={{ display: "flex" }}>
-        <div style={{ display: "flex" }}>
-          <div>
-            <WeatherInfo weather={currentWeather} />
+    <div
+      className="bg-container"
+      style={{
+        display: "flex",
+        height: "100vh",
+        alignItems: "center",
+        justifyContent: "center",
+        overflow: "hidden",
+      }}
+    >
+      <div
+        className="element container"
+        style={{
+          display: "flex",
+          width: "70%",
+          columnGap: "4rem",
+          borderRadius: "2rem",
+          backgroundColor: "rgb(243, 243, 243)",
+          padding: "1.5rem",
+        }}
+      >
+        {currentWeather && (
+          <div
+            className="left"
+            style={{
+              position: "relative",
+              display: "flex",
+              flexDirection: "column",
+              width: "360px",
+              borderRadius: "2rem",
+              padding: "1rem",
+              background: currentWeather.gradientBg,
+            }}
+          >
+            <img
+              src={currentWeather.bgPng}
+              alt="Weather background"
+              style={{
+                position: "absolute",
+                right: 0,
+                top: 0,
+                width: "18rem",
+              }}
+            />
+            <div
+              style={{
+                color: "white",
+              }}
+            >
+              {currentWeather.date}
+            </div>
 
+            <WeatherInfo weather={currentWeather} />
             <WeatherDetails weather={currentWeather.vars} />
           </div>
-        </div>
+        )}
 
-        <div style={{ display: "flex", flexFlow: "column" }}>
-          <div>
-            <WeatherForecast value={futureWeatherList} />
-          </div>
-          <div>
-            <CityCards setSearchValue={setSearchValue} />
-          </div>
-          <div>
-            <SearchBar setSearchValue={setSearchValue} />
-          </div>
+        <div style={{ flex: 1 }}>
+          <WeatherForecast value={futureWeatherList} />
+
+          <CityCards setSearchValue={setSearchValue} />
+
+          <SearchBar setSearchValue={setSearchValue} />
         </div>
       </div>
     </div>

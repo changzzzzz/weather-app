@@ -5,7 +5,13 @@ function SearchBar({ setSearchValue }) {
   const [inputValue, setInputValue] = useState("");
 
   return (
-    <div>
+    <div
+      style={{
+        position: "relative",
+        marginTop: "4rem",
+        width: "50%",
+      }}
+    >
       <input
         placeholder="Search a city"
         value={inputValue}
@@ -23,20 +29,20 @@ function SearchBar({ setSearchValue }) {
           inputValue && setSearchValue(inputValue);
           // console.log(inputValue);
         }}
-        // style={{
-        //   position: "absolute",
-        //   top: "0.3rem",
-        //   bottom: "0.3rem",
-        //   right: "0",
-        //   display: "flex",
-        //   width: "6rem",
-        //   cursor: "pointer",
-        //   alignItems: "center",
-        //   justifyContent: "center",
-        //   borderRadius: "0.5rem",
-        //   backgroundColor: "rgb(91, 72, 218)",
-        //   color: "white",
-        // }}
+        style={{
+          position: "absolute",
+          top: "0.3rem",
+          bottom: "0.3rem",
+          right: "0",
+          display: "flex",
+          width: "6rem",
+          cursor: "pointer",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRadius: "0.5rem",
+          backgroundColor: "rgb(91, 72, 218)",
+          color: "white",
+        }}
       >
         Search
       </div>
