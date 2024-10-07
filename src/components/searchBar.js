@@ -13,6 +13,7 @@ function SearchBar({ setSearchValue }) {
       }}
     >
       <input
+        data-testid="search-input"
         placeholder="Search a city"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
@@ -25,6 +26,7 @@ function SearchBar({ setSearchValue }) {
       />
 
       <div
+        data-testid="search-button"
         onClick={() => {
           inputValue && setSearchValue(inputValue);
           // console.log(inputValue);

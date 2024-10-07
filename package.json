@@ -2,7 +2,6 @@
   "name": "weather-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://changzzzzz.github.io/weather-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -42,6 +41,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "cypress": "^13.15.0",
     "gh-pages": "^6.1.1",
     "node-polyfill-webpack-plugin": "^4.0.0",
     "postcss": "^8.4.47",

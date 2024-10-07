@@ -6,7 +6,7 @@ import WeatherForecast from "./components/WeatherForecast";
 import WeatherInfo from "./components/WeatherInfo";
 import SearchBar from "./components/searchBar";
 import { fetchWeather } from "./services/weatherAPI";
-
+// "homepage": "https://changzzzzz.github.io/weather-app"
 function App() {
   const [searchValue, setSearchValue] = useState("melbourne");
   const [currentWeather, setCurrentWeather] = useState(null);
@@ -69,7 +69,7 @@ function App() {
             }}
           >
             <img
-              src={currentWeather.bgPng}
+              src={`${process.env.PUBLIC_URL}${currentWeather.bgPng}.png`}
               alt="Weather background"
               style={{
                 position: "absolute",

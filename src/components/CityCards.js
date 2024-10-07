@@ -3,7 +3,7 @@ import { fetchWeather } from "../services/weatherAPI";
 
 function CityCards({ setSearchValue }) {
   const cityList = ["sydney", "shanghai", "new york", "london"];
-  const [cityWeatherData, setCityWeatherData] = useState(null);
+  const [cityWeatherData, setCityWeatherData] = useState([]);
   const cities = cityList.map((city) => city.trim());
 
   useEffect(() => {
@@ -44,8 +44,10 @@ function CityCards({ setSearchValue }) {
             setSearchValue(currentWeather.city);
           }}
         >
+          {console.log(`${process.env.PUBLIC_URL}${currentWeather.city}.png`)}
           <img
-            src={currentWeather.city + ".png"}
+            src={`${process.env.PUBLIC_URL}${currentWeather.city}.png`}
+            // src={currentWeather.city + ".png"}
             alt={currentWeather.city}
             style={{
               width: "100%",
