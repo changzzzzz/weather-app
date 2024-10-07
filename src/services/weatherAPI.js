@@ -1,10 +1,10 @@
 // import fetch from "node-fetch";
 import dayjs from "dayjs";
 import { weatherBgMap, weatherGradient, weatherIconMap } from "./weatherMaps";
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
 
 export async function fetchWeather(city) {
-  const API_KEY = "4f419656b9fc4152b6800040243009";
-  const API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=5&aqi=yes`;
+  const API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${city}&days=5&aqi=yes`;
 
   try {
     const response = await fetch(API_URL);

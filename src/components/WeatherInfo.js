@@ -53,7 +53,8 @@ function WeatherInfo(weatherValue) {
         style={{
           width: "100%",
         }}
-        src={weatherValue.weather.png}
+        // src={weatherValue.weather.png}
+        src={`./${weatherValue.weather.png}`}
         alt="Weather icon"
       />
     </div>

@@ -46,7 +46,8 @@ function CityCards({ setSearchValue }) {
         >
           {console.log(`${process.env.PUBLIC_URL}${currentWeather.city}.png`)}
           <img
-            src={`${process.env.PUBLIC_URL}${currentWeather.city}.png`}
+            // src={`${process.env.PUBLIC_URL}${currentWeather.city}.png`}
+            src={`./${currentWeather.city}.png`}
             // src={currentWeather.city + ".png"}
             alt={currentWeather.city}
             style={{
@@ -70,7 +71,8 @@ function CityCards({ setSearchValue }) {
             }}
           >
             <img
-              src={currentWeather.png}
+              // src={currentWeather.png}
+              src={`./${currentWeather.png}`}
               alt={`${currentWeather.city} weather`}
               style={{
                 width: "4rem",

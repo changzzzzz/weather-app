@@ -69,7 +69,8 @@ function App() {
             }}
           >
             <img
-              src={currentWeather.bgPng}
+              // src={currentWeather.bgPng}
+              src={`./${currentWeather.bgPng}`}
               alt="Weather background"
               style={{
                 position: "absolute",

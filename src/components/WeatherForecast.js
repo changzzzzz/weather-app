@@ -41,7 +41,8 @@ function WeatherForecast({ value }) {
             style={{
               width: "10rem",
             }}
-            src={weather.png}
+            // src={weather.png}
+            src={`./${weather.png}`}
             alt="Weather icon"
           />
           <div>{weather.temperature}</div>
