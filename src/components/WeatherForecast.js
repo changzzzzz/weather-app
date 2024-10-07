@@ -1,6 +1,11 @@
 import React from "react";
 
 function WeatherForecast({ value }) {
+  // 如果 value 为空，则不进行渲染
+  if (!value || value.length === 0) {
+    return <div>No forecast data available</div>;
+  }
+
   return (
     <div
       style={{

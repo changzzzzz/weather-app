@@ -69,7 +69,7 @@ function App() {
             }}
           >
             <img
-              src={`${process.env.PUBLIC_URL}${currentWeather.bgPng}.png`}
+              src={currentWeather.bgPng}
               alt="Weather background"
               style={{
                 position: "absolute",
