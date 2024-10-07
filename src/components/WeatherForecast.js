@@ -1,10 +1,6 @@
 import React from "react";
 
 function WeatherForecast({ value }) {
-  console.log(value);
-  if (!Array.isArray(value)) {
-    return <div>No data available</div>;
-  }
   return (
     <div
       style={{

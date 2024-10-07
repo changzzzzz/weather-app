@@ -21,9 +21,6 @@ function CityCards({ setSearchValue }) {
     fetchCitiesWeather();
   }, []);
 
-  if (!cityWeatherData) {
-    return <div>No data available</div>;
-  }
   return (
     <div
       style={{
