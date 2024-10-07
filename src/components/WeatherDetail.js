@@ -26,7 +26,7 @@ function WeatherDetails(weatherValue) {
             fontSize: "0.9rem",
           }}
         >
-          <img src={`./${key}.svg`} alt={key} />
+          <img src={`.${key}.svg`} alt={key} />
           {value}
         </div>
       ))}
